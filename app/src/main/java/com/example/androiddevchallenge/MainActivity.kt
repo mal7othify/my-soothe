@@ -39,13 +39,15 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.statusBarColor = Color.Transparent.toArgb()
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        ViewCompat.setOnApplyWindowInsetsListener(window.decorView.rootView) { _, insets ->
+            insets
+        }
+
         setContent {
             MyTheme {
-                window.statusBarColor = Color.Transparent.toArgb()
-                WindowCompat.setDecorFitsSystemWindows(window, false)
-                ViewCompat.setOnApplyWindowInsetsListener(window.decorView.rootView) { _, insets ->
-                    insets
-                }
                 val navController = rememberNavController()
                 Surface(color = MaterialTheme.colors.background) {
                     NavHost(navController, startDestination = Screen.Welcome.route) {
@@ -63,7 +65,9 @@ class MainActivity : AppCompatActivity() {
                         }
                         composable(
                             "${Screen.Home.route}/{email}",
-                            arguments = listOf(navArgument("email") { type = NavType.StringType })
+                            arguments = listOf(navArgument("email") {
+                                type = NavType.StringType
+                            })
                         ) {
                             Home(it.arguments?.getString("email") ?: "")
                         }

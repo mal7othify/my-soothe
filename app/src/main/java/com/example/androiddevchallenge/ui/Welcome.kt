@@ -34,7 +34,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.navigate
 import com.example.androiddevchallenge.R
 import java.util.Locale
 
@@ -71,12 +70,12 @@ fun Welcome(isDark: Boolean, navController: NavController) {
             onClick = {},
             colors = ButtonDefaults.buttonColors(MaterialTheme.colors.primary),
             modifier = Modifier.fillMaxWidth().height(72.dp).padding(bottom = 8.dp)
-        ) { Text(text = "Sign up".toUpperCase(Locale.ROOT)) }
+        ) { Text(text = "Sign up".uppercase(Locale.ROOT)) }
         Button(
             shape = MaterialTheme.shapes.medium,
             onClick = { navController.navigate("login") },
             colors = ButtonDefaults.buttonColors(MaterialTheme.colors.secondary),
             modifier = Modifier.fillMaxWidth().height(72.dp)
-        ) { Text("Log in".toUpperCase(Locale.ROOT)) }
+        ) { Text("Log in".uppercase(Locale.ROOT)) }
     }
 }

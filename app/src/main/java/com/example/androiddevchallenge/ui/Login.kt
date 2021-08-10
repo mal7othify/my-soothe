@@ -48,7 +48,6 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.navigate
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.typography
 import java.util.Locale
@@ -75,7 +74,7 @@ fun Login(isDark: Boolean, navController: NavController) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "LOG IN".toUpperCase(Locale.ROOT),
+            text = "LOG IN".uppercase(Locale.ROOT),
             style = typography.h1,
             modifier = Modifier.padding(bottom = 32.dp)
         )
@@ -108,7 +107,7 @@ fun Login(isDark: Boolean, navController: NavController) {
             },
             colors = ButtonDefaults.buttonColors(MaterialTheme.colors.primary),
             modifier = Modifier.fillMaxWidth().requiredHeight(72.dp).padding(bottom = 16.dp)
-        ) { Text("LOG IN".toUpperCase(Locale.ROOT)) }
+        ) { Text("LOG IN".uppercase(Locale.ROOT)) }
         Row(Modifier.clickable { }) {
             Text(
                 text = "Don't have an account? ", style = typography.body1

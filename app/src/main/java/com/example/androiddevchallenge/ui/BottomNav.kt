@@ -49,7 +49,7 @@ fun BottomNav() {
                 selected = index % 2 == 0,
                 onClick = { },
                 icon = {
-                    Icon(item.icon, contentDescription = item.title.toUpperCase(Locale.ROOT))
+                    Icon(item.icon, contentDescription = item.title.uppercase(Locale.ROOT))
                 },
                 label = {
                     Text(text = item.title, style = MaterialTheme.typography.caption)

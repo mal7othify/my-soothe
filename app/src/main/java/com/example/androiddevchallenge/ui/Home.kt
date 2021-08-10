@@ -99,7 +99,7 @@ fun Home(email: String) {
                 colors = TextFieldDefaults.outlinedTextFieldColors(MaterialTheme.colors.onSurface)
             )
             Text(
-                "Favorite Collections".toUpperCase(Locale.ROOT),
+                "Favorite Collections".uppercase(Locale.ROOT),
                 style = typography.h2,
                 modifier = Modifier.padding(top = 32.dp, bottom = 8.dp)
             )
@@ -114,7 +114,7 @@ fun Home(email: String) {
                 }
             }
             Text(
-                "Align your body".toUpperCase(Locale.ROOT),
+                "Align your body".uppercase(Locale.ROOT),
                 style = typography.h2,
                 modifier = Modifier.padding(top = 32.dp, bottom = 8.dp)
             )
@@ -124,7 +124,7 @@ fun Home(email: String) {
                 AlignRow(AlignBody)
             }
             Text(
-                "Align your mind".toUpperCase(Locale.ROOT),
+                "Align your mind".uppercase(Locale.ROOT),
                 style = typography.h2,
                 modifier = Modifier.padding(top = 32.dp, bottom = 8.dp)
             )
@@ -141,8 +141,9 @@ fun Home(email: String) {
 fun FaveCollectionRow(collections: List<Card>) {
     collections.forEach { card ->
         Card(
+            backgroundColor = MaterialTheme.colors.surface,
             shape = MaterialTheme.shapes.small,
-            elevation = 8.dp,
+            elevation = 2.dp,
             modifier = Modifier.requiredWidth(192.dp)
                 .requiredHeight(56.dp)
                 .padding(8.dp)
